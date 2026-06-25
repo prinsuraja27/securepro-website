@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecurePro - Professional Digital Website</title>
+  <meta name="description" content="A professional secure business website powered by FastAPI." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#home" aria-label="SecurePro home">
+        <span class="brand-mark">S</span>
+        <span>SecurePro</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-outline" id="openLogin">Login</button>
+        <button class="btn btn-primary" id="openRegister">Get Started</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-content">
+        <p class="eyebrow">Secure • Fast • Professional</p>
+        <h1>Launch a modern website with a real backend.</h1>
+        <p class="hero-text">
+          SecurePro gives your business a clean landing page, customer forms, login system,
+          and protected admin APIs in one ready-to-run project.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary btn-large">Start Project</a>
+          <a href="#features" class="btn btn-glass btn-large">View Features</a>
+        </div>
+        <div class="trust-row" aria-label="stats">
+          <div><strong>JWT</strong><span>Auth</span></div>
+          <div><strong>SQLite</strong><span>Database</span></div>
+          <div><strong>API</strong><span>Ready</span></div>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="dashboard preview">
+        <div class="card-top">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="dashboard-preview">
+          <p class="label">Security Status</p>
+          <h2>Protected API</h2>
+          <div class="meter"><span></span></div>
+          <ul>
+            <li>✓ Password hashing enabled</li>
+            <li>✓ Token based login</li>
+            <li>✓ Contact database connected</li>
+            <li>✓ Admin route protected</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Everything a serious website needs</h2>
+      </div>
+      <div class="grid cards-3">
+        <article class="info-card">
+          <div class="icon">⚡</div>
+          <h3>Fast Website</h3>
+          <p>Clean responsive frontend designed for business, portfolio, agency, startup or college project use.</p>
+        </article>
+        <article class="info-card">
+          <div class="icon">🔐</div>
+          <h3>Secure Backend</h3>
+          <p>FastAPI backend with authentication, validation, rate limiting and security headers.</p>
+        </article>
+        <article class="info-card">
+          <div class="icon">📩</div>
+          <h3>Lead Capture</h3>
+          <p>Contact form and newsletter form store real user data safely inside the database.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split container" id="features">
+      <div>
+        <p class="eyebrow">Backend Features</p>
+        <h2>Frontend + backend dono ready</h2>
+        <p class="muted">
+          You can edit brand name, colors, text and services. Backend APIs are already connected with the frontend forms.
+        </p>
+      </div>
+      <div class="feature-list">
+        <div><span>01</span><p>Register and login with JWT token.</p></div>
+        <div><span>02</span><p>First registered user automatically becomes admin.</p></div>
+        <div><span>03</span><p>Admin can read latest contact messages from protected API.</p></div>
+        <div><span>04</span><p>Security headers, CORS settings and basic rate limiting included.</p></div>
+      </div>
+    </section>
+
+    <section class="section container" id="pricing">
+      <div class="section-heading">
+        <p class="eyebrow">Plans</p>
+        <h2>Professional sections already designed</h2>
+      </div>
+      <div class="grid cards-3 pricing-grid">
+        <article class="price-card">
+          <h3>Starter</h3>
+          <p class="price">₹0</p>
+          <p>Use this as a college/project website starter.</p>
+          <a href="#contact" class="btn btn-outline full">Choose</a>
+        </article>
+        <article class="price-card featured">
+          <p class="badge">Popular</p>
+          <h3>Business</h3>
+          <p class="price">Custom</p>
+          <p>Best for portfolio, local business, service agency or startup page.</p>
+          <a href="#contact" class="btn btn-primary full">Choose</a>
+        </article>
+        <article class="price-card">
+          <h3>Advanced</h3>
+          <p class="price">Scale</p>
+          <p>Upgrade database, hosting, email, payments and analytics later.</p>
+          <a href="#contact" class="btn btn-outline full">Choose</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section auth-panel container" id="account">
+      <div>
+        <p class="eyebrow">Account</p>
+        <h2 id="accountTitle">Login to test protected backend</h2>
+        <p class="muted" id="accountText">Register first. The first account becomes admin automatically.</p>
+      </div>
+      <div class="account-box" id="accountBox">
+        <p class="status" id="authStatus">Not logged in</p>
+        <button class="btn btn-primary" id="loadProfile">Load My Profile</button>
+        <button class="btn btn-outline" id="loadMessages">Load Admin Messages</button>
+        <button class="btn btn-danger" id="logoutBtn">Logout</button>
+        <pre id="profileOutput">Protected output will appear here.</pre>
+      </div>
+    </section>
+
+    <section class="section contact-section container" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Ready to collect real messages</h2>
+        <p class="muted">This form is connected to the backend. Messages are stored in database.</p>
+        <form class="newsletter" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Your email for updates" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label>Name<input type="text" id="contactName" minlength="2" maxlength="80" required /></label>
+        <label>Email<input type="email" id="contactEmail" required /></label>
+        <label>Message<textarea id="contactMessage" minlength="10" maxlength="1000" required></textarea></label>
+        <button class="btn btn-primary full" type="submit">Send Message</button>
+        <p class="form-note" id="contactNote"></p>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal" id="authModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <h2 id="modalTitle">Login</h2>
+      <form id="authForm">
+        <label class="name-field" id="nameField">Full Name<input type="text" id="fullName" minlength="2" maxlength="80" /></label>
+        <label>Email<input type="email" id="email" required /></label>
+        <label>Password<input type="password" id="password" minlength="8" maxlength="128" required /></label>
+        <button class="btn btn-primary full" type="submit" id="authSubmit">Login</button>
+      </form>
+      <p class="form-note" id="authNote"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 SecurePro. Built with FastAPI.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
